@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+      <!-- CSS supporting files -->
+      <link rel="stylesheet" href="../static/files/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../static/files/css/lightslider.css">
+      <link rel="stylesheet" href="../static/files/css/style.css">
+      <link rel="stylesheet" href="../">
+      <!-- JS supporting files -->
+      <script src="../static/files/js/bootstrap.min.js"></script>
+      <script src="../static/files/js/lightslider.js"></script>
+      <script src="../static/files/js/jquery.js"></script>
+      <script src="../static/files/js/script.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        {% include 'navbar.html' %}
+
+        <div class="col-md-6 ms-5">
+            <div class="card shadow p-2">
+                <h5 class="m-2">{{message}}</h5>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <!-- Action attr specifies URL whichthe form's data is sent when sbmitted. Method attr tells the browser how to send to a web server. Enctype atr allows upload of a non-text data like image, audio etc -->
+                    <label for="">Product Name</label>
+                    <input type="text" name="product_name" id="" class="form-control" required><br>
+                     <label for="">Product Description</label><br>
+                     <textarea name="product_desc" id="" cols="30" rows="3" class="form-control" required></textarea>
+                     <br>
+                     <label for="">Product Cost</label>
+                     <input type="number" name="product_cost" id="cost" class="form-control" required><br>
+                    <label for="">Product Category</label>
+                    <select name="product_category" id="" class="form-control">
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Utensils">Utensils</option>
+                        <option value="Smartphones">Smartphones</option>
+                        <option value="Other">Other</option>
+                    </select><br>
+
+                    <label for="">Product Image</label>
+                    <input type="file" name="product_image_name" id="" class="form-control" required><br>
+                    <input type="submit" value="Add/Upload Product" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

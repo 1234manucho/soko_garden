@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single item</title>
+    <link rel="stylesheet" href="../static/files/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+   
+    <!-- JS supporting files -->
+    
+    <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+   <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+</head>
+<body>
+    <!-- include navbar.html and add css and js to the head section -->
+    <div class="container-fluid">
+    {% include 'navbar.html' %}
+
+
+    <br>
+    <section class="row">
+        <div class="col-md-4">
+            <img src="../static/images/{{product [5]}}" alt="image gotten from the db" class="img-thumbnail shadow">
+            <h3 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{product [1]}}</h3>
+
+        </div>
+        <div class="col-md-8">
+           
+            <p class="textr-muted">{{product [2]}}</p> <!-- product description -->
+            <b class="text-warning">KES {{product [3]}}</b><!-- product cost -->
+            <br>
+            <b class="text-danger">Category: {{product [4]}}</b><!-- product_category -->
+
+            <br>
+        {% if session['key'] %}
+            <div class="card shadow p-3 text-center" style="color: burlywood;">
+                <h3>Pay Using Mpesa</h3>
+                <form action="/mpesa" method="post">
+                    <input type="tel" class="form-control" placeholder="Enter Your Mpesa Number:25400000000" name="phone" required><br>
+                    <input type="number" name="amount" class="form-control" value="{{product [3]}}" readonly><br>
+                    <input type="submit" value="Pay Now" class="btn btn-dark">
+                </form>
+
+            </div>
+        {% else %}
+            <h5>please log in to make payment</h5>
+            <a href="/login" class="btn btn-info btn-sm">log in here</a>
+        {% endif %}
+        </div>
+
+    </section>
+    </div>
+    
+</body>
+</html>

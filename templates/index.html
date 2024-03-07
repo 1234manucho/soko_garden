@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS supporting files -->
+    <link rel="stylesheet" href="../static/files/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+   
+    <!-- JS supporting files -->
+    
+    <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+   <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Jinja2 is used to include the navbar to the index -->
+        {% include 'navbar.html' %}
+        <br>
+        {% include 'carousel.html' %}
+        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Smartphones</h2>
+        <section class="slider px-4">
+            <ul class="cs-hidden autoWidth">
+                {% for record in category_smartphones %}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                            <div class="overlay">
+                                <a href="/single_item/{{record [0]}}" class="buy-btn">buy now</a>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            {{record [1]}} <br>
+                            <b class="text-warning">KES {{record [3]}}</b>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Electronics</h2>
+        <section class="slider px-4">
+            <ul class="cs-hidden autoWidth">
+                {% for record in category_Electronics%}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                            <div class="overlay">
+                                <a href="/single_item/{{record [0]}}" class="buy-btn">buy now</a>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            {{record [1]}} <br>
+                            <b class="text-warning">KES {{record [3]}}</b>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Clothing</h2>
+        <section class="slider px-4">
+            <ul class="cs-hidden autoWidth">
+                {% for record in category_Clothing%}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                            <div class="overlay">
+                                <a href="/single_item/{{record [0]}}" class="buy-btn">buy now</a>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            {{record [1]}} <br>
+                            <b class="text-warning">KES {{record [3]}}</b>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Other</h2>
+            <section class="slider px-4">
+                <ul class="cs-hidden autoWidth">
+                    {% for record in category_Other%}
+                    <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/single_item/{{record [0]}}" class="buy-btn">buy now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{record [1]}} <br>
+                                <b class="text-warning">KES {{record [3]}}</b>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="slider px-4">
+            <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Utensils</h2>
+            <section class="slider px-4">
+                <ul class="cs-hidden autoWidth">
+                    {% for record in category_Utensils%}
+                    <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{record [5]}}" alt="image gotten from database" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/single_item/{{record [0]}}" class="buy-btn">buy now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{record [1]}} <br>
+                                <b class="text-warning">KES {{record [3]}}</b>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <footer class="bg-dark text-center p-2">
+                <b class="text-light">Developed by @poor millionaire  &copy;2024.All rights reserved</b>
+        
+            </footer>
+
+
+    </div>
+</body>
+</html>

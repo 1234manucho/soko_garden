@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>suppliers</title>
+    <link rel="stylesheet" href="../static/files/css/bootstrap.min.css">
+     <link rel="stylesheet" href="../static/files/css/lightslider.css">
+     <link rel="stylesheet" href="../static/files/css/style.css">
+     <link rel="stylesheet" href="../">
+     <!-- JS supporting files -->
+     <script src="../static/files/js/bootstrap.min.js"></script>
+     <script src="../static/files/js/lightslider.js"></script>
+     <script src="../static/files/js/jquery.js"></script>
+     <script src="../static/files/js/script.js"></script>
+
+</head>
+<body>
+    <div class="container-fluid">
+        {% include 'navbar.html' %}
+        
+        <br>
+        <section class="row">
+            <div class="col-md-6 mx-auto">
+                <span style="color: green;">{{success}}</span>
+                <div class="card shadow p-2">
+                    <h3 >Create suppliers account</h3>
+                    <form action="/suppliers" method="post">
+                        <label for="firstname">firstname</label>
+                        <input type="text" class="form-control" name="firstname"><br>
+                        <label for="lastname">lastname</label>
+                        <input type="text"  class="form-control" name="lastname"><br>
+                        <label for="national_ID">national_ID</label>
+                        <input type="number"  class="form-control" name="national_ID"><br>
+                        <label for="email">email</label>
+                        <input type="email"  class="form-control" name="email"><br>
+                        <label for="password">password</label>
+                        
+                        <input type="password" name="password1" class="form-control" ><br>
+                        <span style="color: red;">{{error}}</span>
+                        <label for="confirm password">confirm password</label>
+                        <input type="password" name="password2" class="form-control" ><br>
+                        <span style="color: red;">{{error1}}</span>
+
+                        <input type="submit" class="btn btn-success" value="Add Supplier">
+
+
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+        </div>
+    
+</body>
+</html>

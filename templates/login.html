@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!-- CSS supporting files -->
+    <link rel="stylesheet" href="../static/files/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+    <link rel="stylesheet" href="../">
+    <!-- JS supporting files -->
+    <script src="../static/files/js/bootstrap.min.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/script.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        {% include 'navbar.html' %}
+        <section class="row">
+            <div class="col-md-6 mx-auto">
+                 <div class="card shadow p-2 text-center">
+                    
+                    <h3 >login</h3>
+                    <span style="color: red;">{{error}}</span>
+                    <form action="/login" method="post">
+                        <input type="text" placeholder="Your Username" class="form-control" name="username" required><br>
+                        <input type="password" placeholder="Yourpassword" class="form-control" name="password1" required><br>
+                        <input type="submit" class="btn btn-info" value="login">
+
+                    </form>
+                    <a href="/signup" class="text-info">Don't Have An Account?create One</a>
+        </div>
+    
+        </div>
+        </section>
+        </div>
+    
+</body>
+</html>
